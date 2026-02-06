@@ -56,6 +56,7 @@ for d in dados_reparacoes:
             </a>
         </li>
 '''
+    
 
 html = f'''
     <html>
