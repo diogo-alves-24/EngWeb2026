@@ -1,11 +1,12 @@
 # Website de exploração de um dataset de reparações
-## Data: 04-02-2025
-## UC: Engenharia Web (EW)
+### Data: 04-02-2025
+### UC: Engenharia Web (EW)
 
 # Autor
-## Nº Aluno: A106904
-## Nome: Diogo Alves Ferreira
-## Foto: ![Foto](photos/foto.jpeg)
+### Nº Aluno: A106904
+### Nome: Diogo Alves Ferreira
+### Foto: 
+<img src="photos/foto.jpeg"  width="100px" height="150px">
 
 ## Resumo
 Este projeto consiste num script python que gera automaticamente páginas HTML através da informação presente num ficheiro JSON de reparações. 
