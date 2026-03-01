@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  .w3-container
+    h2.w3-center Estatísticas dos EMD
+    p.w3-center Gerado em #{data}
+
+    // SEXO
+    .w3-card.w3-margin
+      header.w3-container.w3-purple
+        h3 Distribuição por Sexo
+      table.w3-table-all
+        thead
+          tr
+            th Sexo
+            th Nº Registos
+        tbody
+          each val, key in stats.sexo
+            tr
+              td= key
+              td= val
+
+    // MODALIDADE
+    .w3-card.w3-margin
+      header.w3-container.w3-blue
+        h3 Distribuição por Modalidade
+      table.w3-table-all
+        thead
+          tr
+            th Modalidade
+            th Nº Registos
+        tbody
+          each val, key in stats.modalidade
+            tr
+              td= key
+              td= val
+
+    // CLUBE
+    .w3-card.w3-margin
+      header.w3-container.w3-teal
+        h3 Distribuição por Clube
+      table.w3-table-all
+        thead
+          tr
+            th Clube
+            th Nº Registos
+        tbody
+          each val, key in stats.clube
+            tr
+              td= key
+              td= val
+
+    // RESULTADO
+    .w3-card.w3-margin
+      header.w3-container.w3-green
+        h3 Distribuição por Resultado
+      table.w3-table-all
+        thead
+          tr
+            th Resultado
+            th Nº Registos
+        tbody
+          each val, key in stats.resultado
+            tr
+              td= key === 'true' ? "Aprovado" : "Reprovado"
+              td= val
+
+    // FEDERADO
+    .w3-card.w3-margin
+      header.w3-container.w3-orange
+        h3 Distribuição por Federado
+      table.w3-table-all
+        thead
+          tr
+            th Federado
+            th Nº Registos
+        tbody
+          each val, key in stats.federado
+            tr
+              td= key === 'true' ? "Sim" : "Não"
+              td= val
+
+    br
+    a.w3-button.w3-purple(href="/emd") Voltar à lista
