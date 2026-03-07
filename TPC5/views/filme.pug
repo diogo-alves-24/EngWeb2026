@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  header.w3-container.w3-teal
+    h1= filme.title
+
+  ul
+    li
+      b Ano: 
+      | #{filme.year}
+
+    li
+      b Cast:
+      ul
+        each ator in filme.cast
+          li= ator
+
+    li
+      b Géneros:
+      ul
+        each g in filme.genres
+          li= g

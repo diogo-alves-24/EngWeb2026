@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-teal
+      h1 Cinema Movies List 
+    
+    .w3-container
+      table.w3-table-all.w3-margin-top
+        tr
+          th Título
+          th Ano
+          th Nº Géneros
+          th Cast
+
+        each f in filmes
+          tr
+            td
+              a(href=`${"/filmes/" + f.id}`)=f.title
+            td= f.year
+            td= f.genres.length
+            td
+              ul
+                each c in f.cast
+                  li= c
+              
