@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+  .w3-container
+    h2 Lista de Generos (#{generos.length})
+
+    table.w3-table-all
+      tr.w3-teal
+        th ID
+        th Nome
+        th Nº de Filmes
+
+      each g in generos
+        tr
+          td= g.id
+          td= g.name
+          td= g.totalFilmes

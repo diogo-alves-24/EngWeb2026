@@ -1,0 +1,8 @@
+FROM mongo:latest
+
+COPY mongo-init/import.sh /docker-entrypoint-initdb.d/import.sh
+COPY filmes_collection.json /docker-entrypoint-initdb.d/filmes_collection.json
+COPY atores_collection.json /docker-entrypoint-initdb.d/atores_collection.json
+COPY generos_collection.json /docker-entrypoint-initdb.d/generos_collection.json
+
+#RUN chmod +x /docker-entrypoint-initdb.d/import.sh

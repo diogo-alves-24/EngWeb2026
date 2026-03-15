@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+  .w3-container.w3-margin-top
+
+    h2.w3-text-teal Ator: #{ator.name}
+
+    table.w3-table-all.w3-card
+      tr.w3-teal
+        th ID
+        th Nome
+        th Nº de Filmes
+
+      tr
+        td= ator.id
+        td= ator.name
+        td= nfilmes
+
+
+    br
+
+    a.w3-button.w3-teal(href="/atores") Voltar à lista

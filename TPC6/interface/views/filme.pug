@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+  .w3-container.w3-margin-top
+
+    h2.w3-text-teal Filme: #{filme.title}
+
+    table.w3-table-all.w3-card
+      tr.w3-teal
+        th Título
+        th Ano
+        th Nº de Atores
+        th Nº de Géneros
+
+      tr
+        td= filme.title
+        td= filme.year
+        td= (filme.cast || []).length
+        td= (filme.genres || []).length
+
+    br
+
+    a.w3-button.w3-teal(href="/filmes") Voltar à lista
