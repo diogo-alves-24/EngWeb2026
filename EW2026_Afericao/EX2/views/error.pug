@@ -1,0 +1,9 @@
+extends layout.pug
+
+block content
+  .w3-container
+    h2 Erro
+    p= message
+    if error
+      pre= error
+    a.w3-button.w3-red(href='/') Voltar

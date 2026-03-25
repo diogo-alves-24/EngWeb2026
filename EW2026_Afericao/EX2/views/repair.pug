@@ -1,0 +1,50 @@
+extends layout.pug
+
+block content
+  .w3-container
+    h2 Registo de Reparação
+
+    ul.w3-ul.w3-card-4
+      li
+        b _id:
+        |  #{repair._id}
+      li
+        b Data:
+        |  #{repair.data}
+      li
+        b Nome:
+        |  #{repair.nome}
+      li
+        b NIF:
+        |  #{repair.nif}
+      li
+        b Matrícula:
+        |  #{repair.viatura ? repair.viatura.matricula : ''}
+      li
+        b Marca:
+        |  
+        if repair.viatura && repair.viatura.marca
+          a(href=`/${repair.viatura.marca}`)= repair.viatura.marca
+      li
+        b Modelo:
+        |  #{repair.viatura ? repair.viatura.modelo : ''}
+      li
+        b Nº de intervenções:
+        |  #{repair.nr_intervencoes}
+
+    if repair.intervencoes && repair.intervencoes.length
+      h3 Intervenções
+      table.w3-table-all
+        tr.w3-light-grey
+          th Código
+          th Nome
+          th Descrição
+
+        each i in repair.intervencoes
+          tr
+            td= i.codigo
+            td= i.nome
+            td= i.descricao
+
+    br
+    a.w3-button.w3-teal(href='/') Voltar

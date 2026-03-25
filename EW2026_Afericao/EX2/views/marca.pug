@@ -1,0 +1,32 @@
+extends layout.pug
+
+block content
+  .w3-container
+    h2 Marca: #{marca}
+    h3 Modelos intervencionados
+
+    ul.w3-ul.w3-card-4.w3-margin-bottom
+      each m in modelos
+        li= m
+
+    h3 Registos da marca #{marca} (#{repairs.length})
+
+    table.w3-table-all
+      tr.w3-light-grey
+        th _id
+        th Data
+        th Nome
+        th Matrícula
+        th Nº de intervenções
+
+      each r in repairs
+        tr
+          td
+            a(href=`/${r._id}`)= r._id
+          td= r.data
+          td= r.nome
+          td= r.viatura ? r.viatura.matricula : ''
+          td= r.nr_intervencoes
+
+    br
+    a.w3-button.w3-teal(href='/') Voltar

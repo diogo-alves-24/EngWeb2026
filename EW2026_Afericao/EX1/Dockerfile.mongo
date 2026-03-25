@@ -1,0 +1,6 @@
+FROM mongo:latest
+
+COPY mongo-init/import.sh /docker-entrypoint-initdb.d/import.sh
+COPY reparacoes_collection.json /docker-entrypoint-initdb.d/reparacoes_collection.json
+
+#RUN chmod +x /docker-entrypoint-initdb.d/import.sh

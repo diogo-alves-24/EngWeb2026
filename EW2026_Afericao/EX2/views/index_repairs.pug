@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+  .w3-container
+    h2 Lista de Reparações (#{repairs.length})
+
+    table.w3-table-all
+      tr.w3-light-grey
+        th _id
+        th Data
+        th Nome
+        th Matrícula
+        th Marca
+        th Nº de intervenções
+
+      each r in repairs
+        tr
+          td
+            a(href=`/${r._id}`)= r._id
+          td= r.data
+          td= r.nome
+          td= r.viatura ? r.viatura.matricula : ''
+          td
+            if r.viatura && r.viatura.marca
+              a(href=`/${r.viatura.marca}`)= r.viatura.marca
+            else
+              | 
+          td= r.nr_intervencoes
